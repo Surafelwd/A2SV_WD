@@ -11,6 +11,13 @@ class Solution:
                 queue.pop(0)
             if i < (len(tickets)):
                 queue.append(tickets[i])
-        return c
+        d=0
+        if k == len(tickets)-1:
+            return c
+        else:
+            for a in range (k+1 ,k+len(tickets[k:])):
+                if tickets[k] <= tickets[a]:
+                    d+=1
+        return c-d
         
         
